@@ -22,6 +22,8 @@ var app = new Vue({
     created: function() {
         this.initRandomArray()
         this.initCountry()
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize()
     },
 
     methods: {
@@ -82,6 +84,14 @@ var app = new Vue({
                 code = "noFlag"
             }
             return `https://flagcdn.com/${code.toLowerCase()}.svg`
+        },
+        handleResize: function() {
+            if (window.innerWidth/window.innerHeight < 1.35){
+                $('#app #main').addClass('flex-column')
+            }
+            else {
+                $('#app #main').removeClass('flex-column')
+            }
         }
     }
 })
