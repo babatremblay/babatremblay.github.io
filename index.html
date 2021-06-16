@@ -23,7 +23,10 @@
                 <h3>{{country2.name}} ({{country2.mountName}})</h3>
                 <h1>{{country2.elevation}} meters</h1>
                 <img v-bind:src=getFlagSVG(country2.code) alt="za" width="90px" height="60px">
-                <h4>streak : {{streak}}</h4>
+                <h4>
+                    current streak : {{streak}} <br>
+                    highest streak : {{highestStreak}}
+                </h4>
             </div>
         </div>
         <div id="divButton" v-on:click="nextRound">

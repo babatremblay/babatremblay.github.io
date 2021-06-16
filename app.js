@@ -15,6 +15,7 @@ var app = new Vue({
             country2 : undefined,
             streak : 0,
             button: "Go next",
+            highestStreak : 0
         }
     },
     
@@ -29,6 +30,9 @@ var app = new Vue({
                 $('#app #main').css("background-color","green")
                 this.button = "Go next"
                 this.streak++
+                if(this.streak > this.highestStreak){
+                    this.highestStreak = this.streak
+                }
             }
             else {
                 this.streak = 0
