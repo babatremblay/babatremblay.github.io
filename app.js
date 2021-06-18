@@ -29,7 +29,7 @@ var app = new Vue({
 
     methods: {
         changeBackgroundImage: function(countryClicked, otherCountry, event) {
-            if(choiceMade == 0){
+            if(choiceMade < 1){
                 if (parseInt(countryClicked.elevation) > parseInt(otherCountry.elevation)){
                     $('#app #main').css("background-color","green")
                     this.button = "Go next"
