@@ -11,14 +11,14 @@
 <body>
     <div id="app">
         <div id = "main">
-            <div id="gauche" class="hover" v-on:click="changeBackgroundImage(country1, country2, $event)"  
+            <div id="gauche" class="hover" v-on:click="changeBackgroundImage(country1, country2, $event, 'gauche')"  
                                 :style="{ backgroundImage: 'url(' + country1.path + ')' }">
 
                 <h3>{{country1.name}} ({{country1.mountName}})</h3>
                 <h1>{{country1.elevation}} meters</h1>
                 <img v-bind:src=getFlagSVG(country1.code) alt="za" width="90px" height="60px">
             </div>
-            <div id="droite" class="hover" v-on:click="changeBackgroundImage(country2, country1, $event)"  
+            <div id="droite" class="hover" v-on:click="changeBackgroundImage(country2, country1, $event, 'droite')"  
                                 :style="{ backgroundImage: 'url(' + country2.path + ')' }">
                 <h3>{{country2.name}} ({{country2.mountName}})</h3>
                 <h1>{{country2.elevation}} meters</h1>

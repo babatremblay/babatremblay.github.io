@@ -28,7 +28,7 @@ var app = new Vue({
     },
 
     methods: {
-        changeBackgroundImage: function(countryClicked, otherCountry, event) {
+        changeBackgroundImage: function(countryClicked, otherCountry, event, side) {
             if(this.choiceMade){
                 if (parseInt(countryClicked.elevation) > parseInt(otherCountry.elevation)){
                     $('#app #main').css("background-color","green")
@@ -44,9 +44,10 @@ var app = new Vue({
                     $('#app #main').css("background-color","red")
                 }
                 this.choiceMade=false
+                $('#' + side).toggleClass('opacity')
+                this.toggleStatus()
             }
-            $('#' + event.target.id).toggleClass('opacity')
-            this.toggleStatus()
+
         },
 
         getRandomCountry: function() {
