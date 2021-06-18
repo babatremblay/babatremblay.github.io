@@ -16,7 +16,7 @@ var app = new Vue({
             streak : 0,
             button: "Go next",
             highestStreak : 0,
-            choiceMade : 0
+            choiceMade : true
         }
     },
     
@@ -29,7 +29,7 @@ var app = new Vue({
 
     methods: {
         changeBackgroundImage: function(countryClicked, otherCountry, event) {
-            if(this.choiceMade < 1){
+            if(this.choiceMade){
                 if (parseInt(countryClicked.elevation) > parseInt(otherCountry.elevation)){
                     $('#app #main').css("background-color","green")
                     this.button = "Go next"
@@ -43,7 +43,7 @@ var app = new Vue({
                     this.button = "Restart"
                     $('#app #main').css("background-color","red")
                 }
-                this.choiceMade=1
+                this.choiceMade=false
             }
             $('#' + event.target.id).toggleClass('opacity')
             this.toggleStatus()
@@ -70,7 +70,7 @@ var app = new Vue({
             $('#gauche').removeClass('opacity')
             $('#droite').removeClass('opacity')
             $('#app #main').css("background-color","rgba(0, 0, 0, 1)")
-            this.choiceMade=0
+            this.choiceMade=true
             this.initCountry()
         },
         toggleStatus: function() {
