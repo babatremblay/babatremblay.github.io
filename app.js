@@ -43,7 +43,7 @@ var app = new Vue({
                     this.button = "Restart"
                     $('#app #main').css("background-color","red")
                 }
-                this.choiceMade = 1
+                this.choiceMade++
             }
             $('#' + event.target.id).toggleClass('opacity')
             this.toggleStatus()
