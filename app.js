@@ -29,7 +29,7 @@ var app = new Vue({
 
     methods: {
         changeBackgroundImage: function(countryClicked, otherCountry, event) {
-            if(parseInt(choiceMade) < 1){
+            if(this.choiceMade < 1){
                 if (parseInt(countryClicked.elevation) > parseInt(otherCountry.elevation)){
                     $('#app #main').css("background-color","green")
                     this.button = "Go next"
@@ -43,7 +43,7 @@ var app = new Vue({
                     this.button = "Restart"
                     $('#app #main').css("background-color","red")
                 }
-                this.choiceMade++
+                this.choiceMade=1
             }
             $('#' + event.target.id).toggleClass('opacity')
             this.toggleStatus()
